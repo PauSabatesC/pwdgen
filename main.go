@@ -1,7 +1,7 @@
 package main
 
 import (
-	"pwdgen/cmd"
+	"github.com/PauSabatesC/pwdgen/cmd"
 )
 
 func main() {

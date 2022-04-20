@@ -1,4 +1,4 @@
-module pwdgen
+module github.com/PauSabatesC/pwdgen
 
 go 1.18
 

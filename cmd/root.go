@@ -3,7 +3,8 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"pwdgen/generator"
+
+	"github.com/PauSabatesC/pwdgen/generator"
 
 	"github.com/spf13/cobra"
 )
