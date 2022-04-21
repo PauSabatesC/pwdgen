@@ -6,9 +6,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var versionTag string //Will be set automatically when deployment occurs :)
+
 const (
-	VERSION   = "v0.0.1"
-	CODE_INFO = "\ngithub.com/PauSabatesC/\n"
+	CODE_INFO = "\ngithub.com/PauSabatesC/"
 )
 
 var info bool
@@ -29,9 +30,9 @@ var version = &cobra.Command{
 	Short: "Software version",
 	Run: func(cmd *cobra.Command, args []string) {
 		if info {
-			fmt.Println(VERSION, CODE_INFO)
+			fmt.Println(versionTag, CODE_INFO)
 		} else {
-			fmt.Println(VERSION)
+			fmt.Println(versionTag)
 		}
 	},
 }
