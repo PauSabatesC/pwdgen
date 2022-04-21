@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	VERSION   = "v1.0"
+	VERSION   = "v0.0.1"
 	CODE_INFO = "\ngithub.com/PauSabatesC/\n"
 )
 
