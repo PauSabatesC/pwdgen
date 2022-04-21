@@ -37,5 +37,7 @@ jobs:
           version: latest
           args: release --rm-dist
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # automatically generated at the start of each github action and it can be
+          # used in places like here if authentication to github is needed.
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 

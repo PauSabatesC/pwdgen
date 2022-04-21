@@ -6,15 +6,25 @@ if [[ -z $version ]]; then
   echo "ERROR: specify a version e.g v0.1.1"
 fi
 
-echo "Did you push the local commit?"
-echo "Did you export your github token? export GITHUB_TOKEN=\"YOUR_GH_TOKEN\""
-echo "Do nothing if you did all... (ctrl+c to abort)"
-sleep 15
-
+read -p "Did you push the local commit? (y/n)" -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    exit 0
+fi
+echo ""
+read -p "Did you export your github token? export GITHUB_TOKEN=\"YOUR_GH_TOKEN\"? (y/n)" -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    exit 0
+fi
+echo "Creating TAG $version ..."
+sleep 5
 git tag -a $version -m "Version $version"
 git push origin $version
 
-echo "Tag created and pushed. Doing the release in 10 seconds..."
-sleep 10
+echo "Tag created and pushed. Continue with the release? (y/n)"
+sleep 5
 goreleaser release --rm-dist
 
