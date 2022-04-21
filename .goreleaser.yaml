@@ -7,10 +7,10 @@ before:
     # you may remove this if you don't need go generate
     - go generate ./...
 builds:
-  - ldflags:
-    - -X github.com/PauSabatesC/pwdgen/cmd.versionTag={{ .Tag }}
   - env:
       - CGO_ENABLED=0
+    ldflags:
+      - -X github.com/PauSabatesC/pwdgen/cmd.versionTag={{ .Tag }}
     goos:
       - linux
       - windows
