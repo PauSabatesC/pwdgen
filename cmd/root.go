@@ -26,6 +26,7 @@ var rootCmd = &cobra.Command{
 		password, err := generator.NewPasswordAllValues(size)
 		if err != nil {
 			fmt.Println(err)
+			return
 		}
 		fmt.Println("Password ->", password)
 	},
