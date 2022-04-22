@@ -10,15 +10,21 @@ pwdgen [-s size]
 ## Install
 
 - CLI:
-  - brew:
+  - Brew:
   ```sh
   ```
+
+  - Docker:
+  ```sh
+  ```
+
   - Downloading the binary
-```sh
-wget pwdgen_{version}_{architecture}.tar.gz
-tar -xvf pwdgen_{version}_{architecture}.tar.gz
-cp pwdgen /usr/local/bin
-```
+  You can get the available binaries from here https://github.com/PauSabatesC/pwdgen/releases
+  ```sh
+  wget pwdgen_{version}_{architecture}.tar.gz
+  tar -xvf pwdgen_{version}_{architecture}.tar.gz
+  cp pwdgen /usr/local/bin
+  ```
 
 ## Install Module
 
