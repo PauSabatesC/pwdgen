@@ -13,6 +13,9 @@ pwdgen [-s size]
   - Docker:
   ```sh
   docker run pausc/pwdgen
+  ```
+
+  ```sh
   # docker run pausc/pwdgen -s {size}
   # docker run pausc/pwdgen version
   ```
