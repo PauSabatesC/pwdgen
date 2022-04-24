@@ -8,6 +8,6 @@ if [[ -z $version ]]; then
 fi
 
 git tag -d $version
-git push --delete origin $versiona
+git push --delete origin $version
 echo "Done. Tag $version is deleted, you can push it again"
 
