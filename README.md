@@ -18,8 +18,9 @@ pwdgen [-s size]
   ```sh
   ```
 
-  - Downloading the binary
-  You can get the available binaries from here https://github.com/PauSabatesC/pwdgen/releases
+  - Downloading the binary:
+
+  You can get the available binaries from here: https://github.com/PauSabatesC/pwdgen/releases
   ```sh
   wget pwdgen_{version}_{architecture}.tar.gz
   tar -xvf pwdgen_{version}_{architecture}.tar.gz
