@@ -12,9 +12,9 @@ pwdgen [-s size]
 - CLI:
   - Docker:
   ```sh
-  docker pull pausc/pwdgen
-  # docker pull pausc/pwdgen -s {size}
-  # docker pull pausc/pwdgen version
+  docker run pausc/pwdgen
+  # docker run pausc/pwdgen -s {size}
+  # docker run pausc/pwdgen version
   ```
 
   - Downloading the binary:
