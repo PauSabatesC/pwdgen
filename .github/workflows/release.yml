@@ -2,9 +2,10 @@ name: goreleaser
 
 on:
   push:
-    # run only against tags
     tags:
       - '*'
+    branches:
+      - 'master'
 
 permissions:
   contents: write
@@ -14,25 +15,26 @@ permissions:
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
-    steps:
-      -
-        name: Checkout
+    steps:      
+      - uses: olegtarasov/get-tag@v2.1
+        id: tagName
+
+      - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      -
-        name: Fetch all tags
+
+      - name: Fetch all tags
         run: git fetch --force --tags
-      -
-        name: Set up Go
+
+      - name: Set up Go
         uses: actions/setup-go@v2
         with:
           go-version: 1.18
-      -
-        name: Run GoReleaser
+
+      - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
-          # either 'goreleaser' (default) or 'goreleaser-pro'
           distribution: goreleaser
           version: latest
           args: release --rm-dist
@@ -40,4 +42,15 @@ jobs:
           # automatically generated at the start of each github action and it can be
           # used in places like here if authentication to github is needed.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  docker-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          build-args: version=${{ $GIT_TAG_NAME }}   
+          push: true
+          tags: pausc/pwdgen:${{ $GIT_TAG_NAME }}
 
