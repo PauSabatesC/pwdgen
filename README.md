@@ -10,12 +10,11 @@ pwdgen [-s size]
 ## Install
 
 - CLI:
-  - Brew:
-  ```sh
-  ```
-
   - Docker:
   ```sh
+  docker pull pausc/pwdgen
+  # docker pull pausc/pwdgen -s {size}
+  # docker pull pausc/pwdgen version
   ```
 
   - Downloading the binary:
