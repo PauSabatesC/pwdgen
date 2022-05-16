@@ -1,6 +1,8 @@
 # pwdgen 
 ### Generate secure passwords in your terminal
 
+![gif](./example.gif)
+
 ## CLI Usage
 
 ```sh
