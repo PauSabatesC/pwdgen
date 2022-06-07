@@ -11,8 +11,15 @@ pwdgen [-s size]
 
 ## Install
 
-- CLI:
-  - Docker:
+- Brew:
+
+  ```
+  brew tap PauSabatesC/pwdgen https://github.com/PauSabatesC/pwdgen
+  brew install pwdgen
+  ```
+
+- Docker:
+
   ```sh
   docker run pausc/pwdgen
   ```
@@ -22,7 +29,7 @@ pwdgen [-s size]
   # docker run pausc/pwdgen version
   ```
 
-  - Downloading the binary:
+- Downloading the binary:
 
   You can get the available binaries from here: https://github.com/PauSabatesC/pwdgen/releases
   ```sh
